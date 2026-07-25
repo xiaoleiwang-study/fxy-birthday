@@ -1,0 +1,19 @@
+{
+  "name": "fxy-birthday-film",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "publish:local": "vite build && node build-to-root.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "three": "^0.178.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.6"
+  }
+}
