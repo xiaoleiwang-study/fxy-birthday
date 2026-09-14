@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#050407" />
     <meta name="description" content="写给 fxy 的一封生日影像。" />
     <title>给 fxy · 七年之后</title>
@@ -51,13 +51,14 @@
         </div>
       </section>
 
+      <div class="story-header" id="storyHeader" aria-hidden="true"><span>七年拾光</span><small>FOR FXY · 2026</small></div>
       <button class="sound-button" id="soundButton" aria-label="播放或暂停音乐">
         <span class="sound-bars"><i></i><i></i><i></i></span>
         <b>遇见</b>
       </button>
       <audio id="bgm" preload="none" loop src="./audio/遇见.mp3"></audio>
 
-      <main id="story">
+      <main id="story" tabindex="-1">
         <section class="scene scene--opening" data-scene="opening">
           <div class="scene__content opening-copy">
             <p class="eyebrow">A FILM FOR FXY · 2026</p>
@@ -184,7 +185,8 @@
             <p class="eyebrow">CHAPTER III · MAKE A WISH</p>
             <h2>先许一个愿望吧。</h2>
             <p>愿这一刻的烛光，也能照亮新一岁的每一天。</p>
-            <div class="cake" id="cake" aria-label="生日蛋糕">
+            <div class="cake" id="cake" role="img" aria-label="星光汇成的生日蛋糕">
+              <canvas class="particle-canvas" aria-hidden="true"></canvas>
               <div class="candles">
                 <i><b></b></i><i><b></b></i><i><b></b></i>
               </div>
@@ -193,8 +195,8 @@
               <div class="cake-tier cake-tier--bottom"><span>F · X · Y</span></div>
               <div class="cake-shadow"></div>
             </div>
-            <button class="cinema-button" id="blowButton">吹灭蜡烛</button>
-            <p class="wish-message" id="wishMessage">愿你所有没说出口的愿望，都慢慢实现。</p>
+            <button class="cinema-button" id="blowButton">许好了，吹灭蜡烛</button>
+            <div class="wish-message" id="wishMessage" aria-live="polite"><strong>生日快乐，fxy。</strong><p>愿你所有没说出口的愿望，<br />都慢慢实现。</p></div>
           </div>
         </section>
 
@@ -207,21 +209,44 @@
               <span class="gift-body"><i></i></span>
               <b>点击拆开</b>
             </button>
-            <article class="letter" id="letter">
-              <p class="letter-date">TO FXY · ON YOUR BIRTHDAY</p>
-              <h3>生日快乐，老同学。</h3>
-              <p>七年不算短。我们从高中一起打游戏、一起玩，到后来各自走进不同的生活。联系没有从前那么频繁，但我一直记得，你第一次给我过生日，也一直记得我的生日时间。</p>
-              <p>后来你更早地走进社会，一个人工作，白班夜班交替。也许学习从来不是你最擅长的事，可成绩和别人定义的那条路，从来不能说明一个人的全部。</p>
-              <p>在我看来，你善良、认真，也一直在努力生活。你真的是一个很好很好的女孩，也是我很珍惜的朋友。</p>
-              <p>新的一岁，希望你工作顺利，白班夜班别太累，也多给自己留一点休息和开心的时间。继续做自己想做的事，生日也要好好过。</p>
-              <p class="letter-sign">—— 认识你七年的高中同学</p>
-            </article>
+
           </div>
         </section>
       </main>
 
-      <div class="rotate-tip">横过来也很好看，但竖屏更像一部电影。</div>
+      <footer class="end-note"><span>2019 — 2026</span><p>故事未完，来日方长。</p><small>为你，认真写下的这一页。</small></footer>
+            <dialog class="letter" id="letter" aria-labelledby="letterTitle">
+              <button class="letter-close" id="closeLetter" aria-label="关闭信件" autofocus>×</button>
+              <p class="letter-date">TO FXY · ON YOUR BIRTHDAY</p>
+              <h3 id="letterTitle">有些话，想认真说给你听。</h3>
+              <p>故事好像不知道该从哪里说起。想来想去，还是从第一次认识你说起吧。认识这么多年，你在我心里的样子一直在变，而那些和你有关的小事，我到现在还记得。</p>
+              <p>第一次见到你，是高一那会儿。你正和我的同学旺财打闹。那时觉得你大大咧咧的，也没想到，后来我们会有这么多故事。</p>
+              <p>后来因为疫情，我们过了一阵子才开始上课。当时座位是随机安排的，我对自己的位置不太满意，就找班主任调了座位。调完之后，你刚好成了我的后桌。那时候的我大概太爱胡说八道，给你留下的第一印象，可能没有多好。</p>
+              <p>我一直记得那次坐公交车。你在后面吐槽我，没想到我也在同一辆车上，还刚好听见了。现在想起来，还是觉得那个场面挺好笑的。我其实没有生气，倒是你后来周一来学校，特意跟我道了歉，让我很意外。也是从那时起，我觉得，你这个人还挺不错的。</p>
+              <p>真正让我一直记到现在的，是你第一次给我过生日，还给我准备了礼物。那时候，我真的又意外又开心。</p>
+              <p>其实礼物是什么，并不是最重要的。重要的是，你记得我的生日，也愿意认真对待这件事。被人放在心上的感觉，对我来说很有意义。所以直到现在，我都记得那时的场景，也一直觉得，那是我们相处得特别开心的一段时间。</p>
+              <p>后来，我们一起打游戏，好多周末都一起玩。那时候快乐很简单，能一起说说话、玩几局，就觉得这一天过得不错。</p>
+              <p>再后来，我喜欢上了别人，和你说了很多，也总想让你帮忙。现在回头看，喜欢谁、想说什么，本来就该由我自己去面对，不该总把这些事情交给你。我那时候想得不够周全，也忽略了你的感受。</p>
+              <p>还有一次，我拿你开玩笑，说了一些暧昧又不合适的话，把你惹生气了。这件事我一直记着。那次确实是我的问题，不该用开玩笑当借口。对不起，这句道歉欠了你很久。</p>
+              <p>后来，我们的联系慢慢少了一些。我那时把很多心思放在喜欢的人身上，明明知道自己有做得不好的地方，却一直没有认真和你说清楚。现在想起来，还是会觉得遗憾。</p>
+              <p>你十八岁的时候，我就很想替你弥补没能好好过生日的遗憾，请你吃一顿大餐，认真陪你庆祝一次。那时候，我已经把你当作知心朋友，所以也希望，你的重要时刻能有人用心对待。</p>
+              <p>后来，你在十九岁那年办了生日聚餐，我也去了，还给你送了礼物。你也一直记得那份礼物，这件事让我很开心。其实我希望的就是这样：我真心地对待你，也希望你真心地对待我。彼此把对方当作知心朋友，把这份感情认真放在心上。</p>
+              <p>你一直很愿意对别人好。有时候，我会觉得你为别人考虑得太多，也会替你不平。但说到底，我只是希望，你付出的认真也能被珍惜，希望你在照顾别人之前，也记得照顾自己。</p>
+              <p>后来你告诉我，你不再继续念书，开始工作了。我当时确实觉得遗憾，因为总觉得，校园里还有一段可以少操心一点、多开心一点的日子。但我也知道，那是你的人生，你有自己的处境和选择，我没办法只凭我的想法，就替你判断什么才是最好的。</p>
+              <p>那时的我还在上学，现在也只是刚有一份工作。很多时候想帮你，却不知道自己究竟能做些什么。只是看到你白班夜班地忙，想多挣一点钱，又把自己弄得很累，我会心疼，也很想劝你多休息一点。</p>
+              <p>我不是想否定你的努力。只是希望，你的生活里除了工作和挣钱，也能留一点时间给自己，吃点喜欢的东西，去想去的地方，不用总把自己绷得那么紧。</p>
+              <p>以前我上大学的时候，我们还能一起打游戏。后来你越来越忙，各自的生活也变了。前段时间，我们的火花断了。我不知道你在不在意，但我自己是在意的。也会想，是不是我先把关系拉近了，却又没有好好维系，让你有过失落。如果有，我想认真和你说声对不起。</p>
+              <p>说到这里，还是想坦白一点：这段时间，我发现自己有点喜欢上你了。</p>
+              <p>我不知道该怎么开口，也不太擅长把这些感受说得漂亮。所以还是想用自己的方式，把这些一直记着的事、一直没说出口的话，认真写给你。那些道歉是我该说的，并不是想让你因此答应我什么。</p>
+              <p>如果可以的话，我想和你见一面。见面也许不能改变什么，但至少可以一起吃顿饭，出去走走，让你从忙碌里放松一下，也让我有机会好好听听你最近的生活。</p>
+              <p>等真的见到你，我想听一听自己心里的答案。如果那时候我依然确定这份喜欢，我会认真地当面告诉你。我这个人确实不太藏得住心事，但你可以慢慢想，不需要为了照顾我的情绪，急着给我一个答案。不管你的回答是什么，我都会尊重。</p>
+              <p>如果你也愿意，我想在后来正式地送你一束花。我也觉得，“恋爱要从一束花开始”这句话很好。我还想过，准备一些烛光，认真布置一个场合，把表白这件事做得有仪式感。至于在哪里、要不要有人见证，我更希望听听你的想法，让那一天是我们两个人都觉得自在、开心的。</p>
+              <p>不过今天，最想说的还是：生日快乐。希望新的一岁，你能少一点疲惫，多一点开心；认真工作的同时，也好好吃饭、好好休息。你值得被认真对待，也值得拥有自己喜欢的生活。</p>
+              <p>谢谢你出现在我的青春里，也谢谢你这么多年留给我的这些回忆。往后的故事会怎么写，我现在还不知道。但如果你愿意，我很想和你一起，慢慢往下写。</p>
+              <p class="letter-sign">—— 认识你七年的我</p>
+            </dialog>
     </div>
+    <noscript><style>.loader,.prologue{display:none}</style><p>开启 JavaScript，可以体验翻书与生日惊喜。</p></noscript>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
